@@ -7,5 +7,7 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint",
   },
-  rules: {},
+  rules: {
+    "no-unused-vars": process.env.NODE_ENV == "production" ? "error" : "warn",
+  },
 };
