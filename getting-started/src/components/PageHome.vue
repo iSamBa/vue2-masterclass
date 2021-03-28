@@ -1,9 +1,22 @@
 <template>
-  <div v-for="thread in threads" :key="thread.id">
-      <h2>{{thread.title}}</h2>
-      <div v-for="postId in thread.posts" :key="postId">
-          <p>{{userById(postById(postId).userId).name}}</p>
-          <p>{{postById(postId).text}}</p>
+  <div class="col-large push-top" v-for="thread in threads" :key="thread.id">
+      <h1>{{thread.title}}</h1>
+      <div class="post-list" >
+          <div class="post" v-for="postId in thread.posts" :key="postId">
+              <div class="user-info">
+                <a href="#" class="user-name">{{userById(postById(postId).userId).name}}</a>
+                <a href="#">
+                    <img class="avatar-large" :src="userById(postById(postId).userId).avatar" alt="user-avatar">
+                </a>
+                <p class="desktop-only text-small">xxx Posts</p>
+              </div>
+              <div class="post-content">
+                <p>{{postById(postId).text}}</p>
+              </div>
+              <div class="post-date text-faded">
+                  {{postById(postId).publishedAt}}
+              </div>
+          </div>
       </div>
   </div>
 </template>
