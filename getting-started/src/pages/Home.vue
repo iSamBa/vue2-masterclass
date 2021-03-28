@@ -1,18 +1,18 @@
 <template>
   <h1>Welcome to the Forum</h1>
-  <thread-list :threads="threads" />
+  <forum-list :forums="forums" />
 </template>
 
 <script>
-import ThreadList from '@/components/ThreadList.vue'
+import ForumList from '@/components/ForumList.vue'
 import sourceData from '@/data.json'
 export default {
   components: {
-    ThreadList
+    ForumList
   },
   data () {
     return {
-      threads: sourceData.threads
+      forums: sourceData.forums
     }
   }
 }
