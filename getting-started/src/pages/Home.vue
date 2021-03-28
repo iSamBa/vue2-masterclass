@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import ThreadList from './ThreadList.vue'
+import ThreadList from '@/components/ThreadList.vue'
 import sourceData from '@/data.json'
 export default {
   components: {
