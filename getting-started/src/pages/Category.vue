@@ -3,6 +3,7 @@
   <forum-list
     :title="category.name"
     :forums="getForumsFromCategory(category)"
+    :categoryId="id"
   />
 </template>
 
@@ -23,13 +24,13 @@ export default {
   methods: {
     getForumsFromCategory (category) {
       return sourceData.forums.filter(
-        forum => forum.categoryId === category.id
+        (forum) => forum.categoryId === category.id
       )
     }
   },
   computed: {
     category () {
-      return sourceData.categories.find(category => category.id === this.id)
+      return sourceData.categories.find((category) => category.id === this.id)
     }
   }
 }
